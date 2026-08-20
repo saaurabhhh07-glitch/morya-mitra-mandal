@@ -1,78 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="mr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>मोरया मित्र मंडळ मानेवाडी | T-Shirt Booking</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#0b0b0b;color:#fff}
-.hero{padding:28px 16px;text-align:center;background:linear-gradient(135deg,#090909,#24120d,#090909)}
-.hero h1{margin:0;font-size:clamp(28px,7vw,52px);color:#f2c66d}.hero p{margin:8px 0;color:#eee}
-.wrap{max-width:1000px;margin:auto;padding:18px}
-.card{background:#151515;border:1px solid #3b2a16;border-radius:18px;padding:18px;margin:18px 0;box-shadow:0 10px 30px #0008}
-.poster{width:100%;display:block;border-radius:14px}
-.price{font-size:34px;font-weight:800;color:#f4c45f;text-align:center;margin:14px}
-.badge{text-align:center;background:#8d1e1e;padding:10px;border-radius:10px;font-weight:700}
-h2{color:#f4c45f}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-label{display:block;font-weight:700;margin:8px 0 5px}input,select{width:100%;padding:13px;border-radius:10px;border:1px solid #555;background:#222;color:#fff;font-size:16px}
-button,.wa{width:100%;padding:14px;border:0;border-radius:11px;font-size:17px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;display:block}
-button{background:#f0bd52;color:#111}.wa{background:#19b95b;color:white;margin-top:10px}
-.small{color:#bbb;font-size:14px}.contacts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.contact{padding:14px;border:1px solid #444;border-radius:12px}
-footer{text-align:center;padding:28px;color:#bbb}
-@media(max-width:650px){.grid,.contacts{grid-template-columns:1fr}.hero{padding:22px 10px}}
+*{box-sizing:border-box}body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+.wrap{max-width:720px;margin:auto;padding:22px}.hero{text-align:center;padding:28px 12px}
+h1{color:#f6c34e;font-size:32px;margin:0 0 8px}.sub{font-size:18px;color:#ddd}
+.card{background:#151515;border:1px solid #493916;border-radius:26px;padding:24px;margin:18px 0}
+.poster{width:100%;border-radius:18px;display:block;background:#222;min-height:180px;object-fit:cover}
+.price{text-align:center;font-size:40px;font-weight:800;color:#f6c34e;margin:20px 0 8px}
+.deadline{text-align:center;background:#a51f1f;border-radius:14px;padding:16px;font-weight:700;font-size:19px}
+h2{color:#f6c34e}label{display:block;font-weight:700;margin:18px 0 8px;font-size:17px}
+input,select{width:100%;padding:17px;border-radius:13px;border:1px solid #666;background:#222;color:#fff;font-size:17px}
+button{width:100%;padding:17px;border:0;border-radius:14px;background:#f6c34e;color:#111;font-size:18px;font-weight:800;margin-top:22px}
+.note{text-align:center;color:#aaa;margin-top:14px}.status{text-align:center;margin-top:15px;font-weight:700}
 </style>
 </head>
 <body>
-<header class="hero">
-<h1>मोरया मित्र मंडळ मानेवाडी</h1>
-<p>स्थापना २०२५ • गणपती बाप्पा मोरया! 🙏</p>
-</header>
+<div class="wrap">
+  <section class="hero">
+    <h1>मोरया मित्र मंडळ मानेवाडी</h1>
+    <div class="sub">स्थापना २०२५ • गणपती बाप्पा मोरया! 🙏</div>
+  </section>
 
-<main class="wrap">
-<div class="card">
-<img class="poster" src="tshirt-poster.png" alt="मोरया मित्र मंडळ मानेवाडी T-shirt design">
-<div class="price">₹300 / टी-शर्ट</div>
-<div class="badge">बुकिंगची अंतिम तारीख: २५ ऑगस्ट</div>
-</div>
+  <section class="card">
+    <img class="poster" src="tshirt-poster.png" alt="T-Shirt Poster"
+         onerror="this.style.display='none'">
+    <div class="price">₹300 / टी-शर्ट</div>
+    <div class="deadline">बुकिंगची अंतिम तारीख: २५ ऑगस्ट</div>
+  </section>
 
-<div class="card">
-<h2>👕 T-Shirt Booking</h2>
-<form id="orderForm">
-<div class="grid">
-<div><label>तुमचे नाव</label><input id="name" required placeholder="उदा. रोहित पाटील"></div>
-<div><label>मोबाईल नंबर</label><input id="phone" required inputmode="tel" placeholder="10 अंकी नंबर"></div>
-<div><label>साईज</label><select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
-<div><label>टी-शर्ट संख्या</label><input id="qty" type="number" min="1" value="1" required></div>
-</div>
-<br>
-<button type="submit">WhatsApp वर बुकिंग पाठवा 📲</button>
-</form>
-<p class="small">फॉर्म भरल्यानंतर WhatsApp उघडेल. तुमची ऑर्डर तपासून संबंधित व्यक्तीशी संपर्क करा.</p>
-</div>
+  <section class="card">
+    <h2>👕 T-Shirt Booking</h2>
+    <form id="bookingForm">
+      <label>तुमचे नाव</label>
+      <input id="name" required placeholder="उदा. रोहित पाटील">
 
-<div class="card">
-<h2>📞 संपर्क</h2>
-<div class="contacts">
-<div class="contact"><b>आकाश लेंगारे</b><br>+91 91461 39703</div>
-<div class="contact"><b>प्रशांत माने</b><br>+91 86250 69040</div>
-</div>
-</div>
-</main>
+      <label>मोबाईल नंबर</label>
+      <input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकी नंबर">
 
-<footer>|| गणपती बाप्पा मोरया ||<br>मोरया परिवार • एकत्र येऊ, उत्सव साजरा करू! ❤️</footer>
+      <label>साईज</label>
+      <select id="size" required>
+        <option value="">साईज निवडा</option><option>S</option><option>M</option><option>L</option>
+        <option>XL</option><option>XXL</option>
+      </select>
 
+      <label>टी-शर्ट संख्या</label>
+      <input id="quantity" type="number" min="1" max="20" value="1" required>
+
+      <button id="submitBtn" type="submit">बुकिंग Submit करा</button>
+      <div class="status" id="status"></div>
+      <div class="note">Submit केल्यानंतर तुमची बुकिंग Admin Dashboard मध्ये थेट जमा होईल.</div>
+    </form>
+  </section>
+</div>
 <script>
-const contacts=["919146139703","918625069040"];
-document.getElementById("orderForm").addEventListener("submit",function(e){
- e.preventDefault();
- const name=document.getElementById("name").value.trim();
- const phone=document.getElementById("phone").value.trim();
- const size=document.getElementById("size").value;
- const qty=document.getElementById("qty").value;
- const total=Number(qty)*300;
- const msg=`🙏 मोरया मित्र मंडळ मानेवाडी T-Shirt Booking%0A%0Aनाव: ${encodeURIComponent(name)}%0Aमोबाईल: ${encodeURIComponent(phone)}%0Aसाईज: ${size}%0Aसंख्या: ${qty}%0Aएकूण रक्कम: ₹${total}%0A%0Aबुकिंग तारीख: २५ ऑगस्टपूर्वी`;
- const n=contacts[Math.floor(Math.random()*contacts.length)];
- window.open(`https://wa.me/${n}?text=${msg}`,"_blank");
+const form=document.getElementById('bookingForm');
+const status=document.getElementById('status');
+const btn=document.getElementById('submitBtn');
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const mobile=document.getElementById('mobile').value.trim();
+  if(!/^[0-9]{10}$/.test(mobile)){status.textContent='कृपया योग्य 10 अंकी मोबाईल नंबर द्या.';return}
+  const data={
+    name:document.getElementById('name').value.trim(),
+    mobile,size:document.getElementById('size').value,
+    quantity:Number(document.getElementById('quantity').value)
+  };
+  btn.disabled=true;btn.textContent='Booking जमा होत आहे...';status.textContent='';
+  try{
+    const r=await fetch('/api/bookings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||'Booking failed');
+    status.textContent='✅ Booking successfully submitted!';
+    form.reset();document.getElementById('quantity').value=1;
+  }catch(err){status.textContent='❌ '+err.message}
+  finally{btn.disabled=false;btn.textContent='बुकिंग Submit करा'}
 });
 </script>
 </body>

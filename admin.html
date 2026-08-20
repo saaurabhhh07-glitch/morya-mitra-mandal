@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin | Morya Mitra Mandal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+.wrap{max-width:900px;margin:auto;padding:22px}.card{background:#151515;border:1px solid #493916;border-radius:20px;padding:22px;margin:18px 0}
+h1{color:#f6c34e}.row{display:flex;gap:10px;flex-wrap:wrap}input{padding:14px;border-radius:10px;border:1px solid #666;background:#222;color:#fff;flex:1;min-width:180px}
+button{padding:14px 18px;border:0;border-radius:10px;background:#f6c34e;font-weight:800}.danger{background:#b52a2a;color:#fff}
+table{width:100%;border-collapse:collapse;margin-top:15px}th,td{padding:12px;border-bottom:1px solid #333;text-align:left}
+.small{color:#aaa}.hidden{display:none}.msg{margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🔐 Morya Mitra Mandal — Admin</h1>
+<div id="login" class="card">
+<h2>Admin Login</h2>
+<input id="email" type="email" placeholder="Admin email"><br><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button><div id="loginMsg" class="msg"></div>
+</div>
+<div id="panel" class="hidden">
+<div class="card">
+<div class="row"><h2 style="margin-right:auto">📋 Bookings</h2><button onclick="load()">Refresh</button><button class="danger" onclick="logout()">Logout</button></div>
+<div class="small" id="count"></div>
+<div style="overflow:auto"><table><thead><tr><th>Name</th><th>Mobile</th><th>Size</th><th>Qty</th><th>Amount</th><th>Date</th></tr></thead><tbody id="body"></tbody></table></div>
+</div>
+</div>
+</div>
+<script type="module">
+import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const SUPABASE_URL='PASTE_SUPABASE_URL';
+const SUPABASE_ANON_KEY='PASTE_SUPABASE_ANON_KEY';
+const sb=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+const loginBox=document.getElementById('login'),panel=document.getElementById('panel');
+window.login=async()=>{const {error}=await sb.auth.signInWithPassword({email:email.value,password:password.value});loginMsg.textContent=error?error.message:'';if(!error){loginBox.classList.add('hidden');panel.classList.remove('hidden');load()}};
+window.logout=async()=>{await sb.auth.signOut();panel.classList.add('hidden');loginBox.classList.remove('hidden')};
+window.load=async()=>{
+ const {data,error}=await sb.from('bookings').select('*').order('created_at',{ascending:false});
+ if(error){document.getElementById('count').textContent=error.message;return}
+ document.getElementById('count').textContent=`Total bookings: ${data.length}`;
+ body.innerHTML=data.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.mobile)}</td><td>${esc(x.size)}</td><td>${x.quantity}</td><td>₹${x.amount}</td><td>${new Date(x.created_at).toLocaleString()}</td></tr>`).join('');
+};
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+</script>
+</body>
+</html>
