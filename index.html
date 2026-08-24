@@ -1,83 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>मोरया मित्र मंडळ मानेवाडी | T-Shirt Booking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
-.wrap{max-width:720px;margin:auto;padding:22px}.hero{text-align:center;padding:28px 12px}
-h1{color:#f6c34e;font-size:32px;margin:0 0 8px}.sub{font-size:18px;color:#ddd}
-.card{background:#151515;border:1px solid #493916;border-radius:26px;padding:24px;margin:18px 0}
-.poster{width:100%;border-radius:18px;display:block;background:#222;min-height:180px;object-fit:cover}
-.price{text-align:center;font-size:40px;font-weight:800;color:#f6c34e;margin:20px 0 8px}
-.deadline{text-align:center;background:#a51f1f;border-radius:14px;padding:16px;font-weight:700;font-size:19px}
-h2{color:#f6c34e}label{display:block;font-weight:700;margin:18px 0 8px;font-size:17px}
-input,select{width:100%;padding:17px;border-radius:13px;border:1px solid #666;background:#222;color:#fff;font-size:17px}
-button{width:100%;padding:17px;border:0;border-radius:14px;background:#f6c34e;color:#111;font-size:18px;font-weight:800;margin-top:22px}
-.note{text-align:center;color:#aaa;margin-top:14px}.status{text-align:center;margin-top:15px;font-weight:700}
+:root{--bg:#090706;--card:rgba(28,20,13,.78);--gold:#e7b85c;--gold2:#fff0b5;--text:#fff8e8;--muted:#cbbda5;--line:rgba(231,184,92,.28)}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 50% 0,#4a2d0d 0,#140d07 35%,#070605 80%);color:var(--text);font-family:"Tiro Devanagari Marathi",serif;min-height:100vh}
+body:before{content:"ॐ  गणपती बाप्पा मोरया  ॐ";position:fixed;inset:0;display:grid;place-items:center;opacity:.035;font-family:"Yatra One";font-size:clamp(35px,8vw,100px);transform:rotate(-18deg);pointer-events:none}
+.wrap{max-width:900px;margin:auto;padding:26px 16px 60px}.brand{text-align:center;padding:28px 10px 14px}.brand .om{font-size:42px;color:var(--gold)}h1{font-family:"Yatra One";font-size:clamp(30px,7vw,54px);margin:4px 0;color:var(--gold2);text-shadow:0 3px 20px #000}.sub{color:var(--muted);font-size:18px}.hero{margin-top:18px;border:1px solid var(--line);border-radius:28px;padding:30px 22px;background:linear-gradient(145deg,rgba(61,38,15,.8),rgba(18,12,8,.82));box-shadow:0 25px 70px #0008,inset 0 1px #fff2;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-70px;background:#e7b85c18;box-shadow:0 0 100px 60px #e7b85c10}.notice{text-align:center;font-weight:bold;color:#ffe4a1;font-size:20px}.timer{display:flex;justify-content:center;gap:10px;margin:16px 0 8px;flex-wrap:wrap}.timebox{min-width:72px;padding:10px 8px;border:1px solid var(--line);border-radius:14px;background:#0005;text-align:center}.timebox b{display:block;font-size:25px;color:var(--gold2)}.timebox small{color:var(--muted)}
+.card{margin-top:20px;background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 20px 55px #0009}.card h2{font-family:"Yatra One";color:var(--gold);margin-top:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;color:#ead8b7;margin-bottom:7px}.field input,.field select{width:100%;padding:14px 13px;border-radius:13px;border:1px solid #80602d;background:#100c08;color:#fff;font:inherit;outline:none}.field input:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px #e7b85c18}.full{grid-column:1/-1}.btn{width:100%;margin-top:20px;padding:15px;border:0;border-radius:14px;background:linear-gradient(100deg,#b77b20,#f3cc72,#b77b20);color:#241606;font-weight:900;font-size:18px;font-family:inherit;cursor:pointer;box-shadow:0 10px 28px #b77b2038}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.success{display:none;text-align:center;padding:20px;border:1px solid #d9ad57;border-radius:16px;background:#1c150b}.success strong{font-size:22px;color:#ffe3a0}.footer{text-align:center;color:#9f917d;margin-top:24px;font-size:14px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.wrap{padding-top:10px}.hero{padding:24px 16px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <section class="hero">
+  <header class="brand">
+    <div class="om">ॐ</div>
     <h1>मोरया मित्र मंडळ मानेवाडी</h1>
-    <div class="sub">स्थापना २०२५ • गणपती बाप्पा मोरया! 🙏</div>
+    <div class="sub">T-Shirt Booking 2026</div>
+  </header>
+
+  <section class="hero">
+    <div class="notice">🔥 T-Shirt Booking फक्त 2 दिवसांसाठी 🔥</div>
+    <div class="timer" id="timer">
+      <div class="timebox"><b id="d">02</b><small>दिवस</small></div>
+      <div class="timebox"><b id="h">00</b><small>तास</small></div>
+      <div class="timebox"><b id="m">00</b><small>मिनिटे</small></div>
+      <div class="timebox"><b id="s">00</b><small>सेकंद</small></div>
+    </div>
   </section>
 
   <section class="card">
-    <img class="poster" src="tshirt-poster.png" alt="T-Shirt Poster"
-         onerror="this.style.display='none'">
-    <div class="price">₹300 / टी-शर्ट</div>
-    <div class="deadline">बुकिंगची अंतिम तारीख: २५ ऑगस्ट</div>
-  </section>
-
-  <section class="card">
-    <h2>👕 T-Shirt Booking</h2>
+    <h2>🪔 T-Shirt Booking</h2>
     <form id="bookingForm">
-      <label>तुमचे नाव</label>
-      <input id="name" required placeholder="उदा. रोहित पाटील">
-
-      <label>मोबाईल नंबर</label>
-      <input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकी नंबर">
-
-      <label>साईज</label>
-      <select id="size" required>
-        <option value="">साईज निवडा</option><option>S</option><option>M</option><option>L</option>
-        <option>XL</option><option>XXL</option>
-      </select>
-
-      <label>टी-शर्ट संख्या</label>
-      <input id="quantity" type="number" min="1" max="20" value="1" required>
-
-      <button id="submitBtn" type="submit">बुकिंग Submit करा</button>
-      <div class="status" id="status"></div>
-      <div class="note">Submit केल्यानंतर तुमची बुकिंग Admin Dashboard मध्ये थेट जमा होईल.</div>
+      <div class="grid">
+        <div class="field"><label>नाव</label><input id="name" required placeholder="तुमचे पूर्ण नाव"></div>
+        <div class="field"><label>मोबाईल नंबर</label><input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकी मोबाईल नंबर"></div>
+        <div class="field"><label>T-Shirt Size</label><select id="size" required><option value="">Size निवडा</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>XXXL</option></select></div>
+        <div class="field"><label>Quantity</label><input id="qty" type="number" min="1" max="20" value="1" required></div>
+      </div>
+      <button class="btn" type="submit">BOOK T-SHIRT ✦</button>
     </form>
+    <div class="success" id="success">
+      <strong>✅ Booking Successfully Submitted!</strong>
+      <p id="summary"></p>
+    </div>
   </section>
+  <div class="footer">गणपती बाप्पा मोरया 🙏 • मोरया मित्र मंडळ मानेवाडी</div>
 </div>
+
 <script>
-const form=document.getElementById('bookingForm');
-const status=document.getElementById('status');
-const btn=document.getElementById('submitBtn');
-form.addEventListener('submit',async(e)=>{
-  e.preventDefault();
-  const mobile=document.getElementById('mobile').value.trim();
-  if(!/^[0-9]{10}$/.test(mobile)){status.textContent='कृपया योग्य 10 अंकी मोबाईल नंबर द्या.';return}
-  const data={
-    name:document.getElementById('name').value.trim(),
-    mobile,size:document.getElementById('size').value,
-    quantity:Number(document.getElementById('quantity').value)
-  };
-  btn.disabled=true;btn.textContent='Booking जमा होत आहे...';status.textContent='';
-  try{
-    const r=await fetch('/api/bookings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    const j=await r.json();
-    if(!r.ok) throw new Error(j.error||'Booking failed');
-    status.textContent='✅ Booking successfully submitted!';
-    form.reset();document.getElementById('quantity').value=1;
-  }catch(err){status.textContent='❌ '+err.message}
-  finally{btn.disabled=false;btn.textContent='बुकिंग Submit करा'}
+const KEY="moryaBookings";
+let end=localStorage.getItem("bookingEnd");
+if(!end){end=Date.now()+48*60*60*1000;localStorage.setItem("bookingEnd",end)}
+function tick(){
+ let x=Math.max(0,Number(end)-Date.now());
+ let d=Math.floor(x/86400000),h=Math.floor(x%86400000/3600000),m=Math.floor(x%3600000/60000),s=Math.floor(x%60000/1000);
+ document.querySelector("#d").textContent=String(d).padStart(2,"0");document.querySelector("#h").textContent=String(h).padStart(2,"0");document.querySelector("#m").textContent=String(m).padStart(2,"0");document.querySelector("#s").textContent=String(s).padStart(2,"0");
+}
+tick();setInterval(tick,1000);
+document.querySelector("#bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const b={id:"MOR"+Date.now().toString().slice(-6),name:name.value,mobile:mobile.value,size:size.value,qty:Number(qty.value),time:new Date().toLocaleString("en-IN")};
+ const list=JSON.parse(localStorage.getItem(KEY)||"[]");list.push(b);localStorage.setItem(KEY,JSON.stringify(list));
+ document.querySelector("#summary").textContent=`Booking ID: ${b.id} • ${b.name} • ${b.size} × ${b.qty}`;
+ e.target.style.display="none";document.querySelector("#success").style.display="block";
 });
 </script>
 </body>
